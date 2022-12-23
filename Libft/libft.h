@@ -6,7 +6,7 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:31:47 by eleleux           #+#    #+#             */
-/*   Updated: 2022/12/21 16:55:54 by eleleux          ###   ########.fr       */
+/*   Updated: 2022/12/23 11:05:30 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <string.h>
 # include "ft_printf.h"
 # include "get_next_line.h"
+# include <stdint.h>
 
 typedef struct s_list
 {

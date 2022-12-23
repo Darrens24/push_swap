@@ -6,13 +6,13 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 13:04:12 by eleleux           #+#    #+#             */
-/*   Updated: 2022/11/22 16:09:25 by eleleux          ###   ########.fr       */
+/*   Updated: 2022/12/23 11:08:19 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	ft_strlen(char *str)
+int	ft_intstrlen(char *str)
 {
 	int	i;
 

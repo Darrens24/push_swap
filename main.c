@@ -5,6 +5,8 @@ int main(int ac, char **av)
     t_data  push_swap;
     int i = 0;
 
+    if (ac < 2)
+        return (0);
     get_data(&push_swap, ac, av);
     check_double(push_swap.tab, ac);
     while (i < push_swap.nb_args)

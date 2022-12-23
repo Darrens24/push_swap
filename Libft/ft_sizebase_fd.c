@@ -6,7 +6,7 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 15:41:48 by eleleux           #+#    #+#             */
-/*   Updated: 2022/11/27 12:27:46 by eleleux          ###   ########.fr       */
+/*   Updated: 2022/12/23 11:06:18 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,6 @@ int	ft_sizebase_fd(size_t nbr, char *base, int fd)
 		count += ft_intputchar_fd('0', fd);
 	if (!((int)ft_strlen(base) < 2) && !(already(base)) && !(plusminus(base)))
 	{
-		if (nbr < 0)
-		{
-			ft_intputchar_fd('-', fd);
-			nbr = -nbr;
-		}
 		while (nbr > 0)
 		{
 			tab[i++] = base[nbr % ft_strlen(base)];
