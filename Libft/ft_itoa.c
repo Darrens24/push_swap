@@ -6,7 +6,7 @@
 /*   By: eleleux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:12:09 by eleleux           #+#    #+#             */
-/*   Updated: 2022/11/13 20:35:06 by eleleux          ###   ########.fr       */
+/*   Updated: 2022/12/27 12:55:06 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ char	*ft_itoa(int n)
 	long	nb;
 
 	nb = n;
+	recipe = NULL;
 	if (nb < 0)
 		recipe = itoa_is_neg(nb);
 	else

@@ -7,6 +7,7 @@ FLAGS = -Wall -Wextra -Werror
 SRC = main.c \
 		errors.c \
 		push_swap.c \
+		lists.c \
 		
 OBJ = $(SRC:.c=.o)
 
