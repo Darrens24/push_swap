@@ -14,7 +14,7 @@
 
 t_chained	*remove_front_node(t_chained *list)
 {
-	t_chained	*temp;
+	t_node	*temp;
 
 	if (is_empty(list))
 	{
@@ -28,17 +28,42 @@ t_chained	*remove_front_node(t_chained *list)
 		list = NULL;
 		return (null_list());
 	}
-	temp = list;
-	free(list->start);
-	list->start = temp->start->next;
+	temp = list->start;
+	list->start = list->start->next;
+	list->start->prev = NULL;
+	temp->prev = NULL;
+	temp->next = NULL;
+	free(temp);
+	temp = NULL;
 	list->nb_elem--;
 	return (list);
 }
 
-/*
+
 t_chained	*remove_back_node(t_chained *list)
 {
+	t_node	*temp;
 
+	if (is_empty(list))
+	{
+		ft_putstr_fd("Error\nNothing to free\n", 2);
+		return (null_list());
+	}
+	if (list->start == list->end)
+	{
+		free(list->start);
+		free(list);
+		list = NULL;
+		return (null_list());
+	}
+	temp = list->end;
+	list->end = list->end->prev;
+	list->end->next = NULL;
+	temp->prev = NULL;
+	temp->next = NULL;
+	free(temp);
+	temp = NULL;
+	list->nb_elem--;
 	return (list);
 }
-*/
+

@@ -8,6 +8,8 @@ SRC = main.c \
 		errors.c \
 		push_swap.c \
 		lists.c \
+		instructions1.c \
+		instructions2.c \
 		
 OBJ = $(SRC:.c=.o)
 
