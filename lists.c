@@ -12,6 +12,62 @@
 
 #include "push_swap.h"
 
+t_chained	*new_front_node(t_chained *list, int data)
+{
+	t_node	*elem;
+
+	elem = malloc(sizeof(*elem));
+	if (!elem)
+	{
+		ft_putstr_fd("Error\nDynamic allocation failed", 2);
+		return (null_list());
+	}
+	elem->data = data;
+	elem->next = NULL;
+	elem->prev = NULL;
+	if (is_empty(list))
+	{
+		list->start = elem;
+		list->end = elem;
+	}
+	else
+	{
+		list->start->prev = elem;
+		elem->next = list->start;
+		list->start = elem;
+	}
+	list->nb_elem++;
+	return (list);
+}
+
+t_chained	*new_back_node(t_chained *list, int data)
+{
+	t_node	*elem;
+
+	elem = malloc(sizeof(*elem));
+	if (!elem)
+	{
+		ft_putstr_fd("Error\nDynamic allocation failed", 2);
+		return (null_list());
+	}
+	elem->data = data;
+	elem->next = NULL;
+	elem->prev = NULL;
+	if (is_empty(list))
+	{
+		list->start = elem;
+		list->end = elem;
+	}
+	else
+	{
+		list->end->next = elem;
+		elem->prev = list->end;
+		list->end = elem;
+	}
+	list->nb_elem++;
+	return (list);
+}
+
 t_chained	*remove_front_node(t_chained *list)
 {
 	t_node	*temp;
@@ -66,4 +122,3 @@ t_chained	*remove_back_node(t_chained *list)
 	list->nb_elem--;
 	return (list);
 }
-

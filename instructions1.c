@@ -14,8 +14,12 @@ t_chained	*swap_top(t_chained *list)
 	temp = list->start->next;
 	buf = temp->data;
 	free(list->start->next);
-	list->start->next = temp->next;
-	temp->next->prev = list->start;
+	list->start->next = NULL;
+	if (list->nb_elem > 2)
+	{
+		list->start->next = temp->next;
+		temp->next->prev = list->start;
+	}
 	list = new_front_node(list, buf);
 	ft_printf("s%c\n", list->name);
 	return (list);

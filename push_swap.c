@@ -24,62 +24,6 @@ int	is_empty(t_chained *list)
 	return (0);
 }
 
-t_chained	*new_front_node(t_chained *list, int data)
-{
-	t_node	*elem;
-
-	elem = malloc(sizeof(*elem));
-	if (!elem)
-	{
-		ft_putstr_fd("Error\nDynamic allocation failed", 2);
-		return (null_list());
-	}
-	elem->data = data;
-	elem->next = NULL;
-	elem->prev = NULL;
-	if (is_empty(list))
-	{
-		list->start = elem;
-		list->end = elem;
-	}
-	else
-	{
-		list->start->prev = elem;
-		elem->next = list->start;
-		list->start = elem;
-	}
-	list->nb_elem++;
-	return (list);
-}
-
-t_chained	*new_back_node(t_chained *list, int data)
-{
-	t_node	*elem;
-
-	elem = malloc(sizeof(*elem));
-	if (!elem)
-	{
-		ft_putstr_fd("Error\nDynamic allocation failed", 2);
-		return (null_list());
-	}
-	elem->data = data;
-	elem->next = NULL;
-	elem->prev = NULL;
-	if (is_empty(list))
-	{
-		list->start = elem;
-		list->end = elem;
-	}
-	else
-	{
-		list->end->next = elem;
-		elem->prev = list->end;
-		list->end = elem;
-	}
-	list->nb_elem++;
-	return (list);
-}
-
 int	get_data(t_data *data, int ac, char **av)
 {
 	int	i;
@@ -100,6 +44,8 @@ int	get_data(t_data *data, int ac, char **av)
 		ft_putstr_fd("Error\nDynamic allocation failed", 2);
 		return (-1);
 	}
+	data->a->name = 'a';
+	data->b->name = 'b';
 	while (i < data->nb_elem)
 	{
 		data->a = new_back_node(data->a, ft_atoi(av[i + 1]));

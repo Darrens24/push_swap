@@ -36,7 +36,6 @@ typedef struct s_data
 	int			medium;
 	int			bigger;
 	int			lower;
-	int			middle;
 	t_chained	*a;
 	t_chained	*b;
 
@@ -51,12 +50,19 @@ t_chained	*remove_front_node(t_chained *list);//ok
 t_chained	*remove_back_node(t_chained *list);//ok
 
 //Data
+long	ft_atol(char *str);
 int		get_data(t_data *data, int ac, char **av);//ok
 void	free_data(t_data *data);
+int		is_sorted(t_chained *list);
+int		is_reverse_sorted(t_chained *list);
+int		list_has_sup_med(t_data *data, t_chained *list);
+int		list_has_low_med(t_data *data, t_chained *list);
+int		node_is_sup_med(t_data *data, t_node *node);
 
 //Errors
 int	check_double(char **av, int ac);
 int	check_is_int(int ac, char **av);
+int	check_is_digit(char **av);
 int	check_errors(char **av, int ac);
 
 //Instructions
@@ -67,5 +73,10 @@ t_chained	*rotate(t_chained *list);//ok
 t_chained	*rotate_both(t_chained *list1, t_chained *list2);//ok
 t_chained	*reverse(t_chained *list);
 t_chained	*reverse_both(t_chained *list1, t_chained *list2);//ok
+
+//Sorting Algos
+t_chained	*low_data(t_data *data);
+t_chained	*medium_data(t_data *data);
+t_chained	*high_data(t_data *data);
 
 #endif

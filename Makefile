@@ -5,12 +5,14 @@ CC = gcc
 FLAGS = -Wall -Wextra -Werror
 
 SRC = main.c \
+	  	utils.c\
+		utils2.c
 		errors.c \
-		push_swap.c \
 		lists.c \
 		instructions1.c \
 		instructions2.c \
-		
+		sorting.c \
+
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)

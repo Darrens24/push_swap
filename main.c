@@ -4,32 +4,23 @@ int main(int ac, char **av)
 {
     t_data  *push_swap;
 
-    if (ac < 2)
-	{
-    	return (0);
-	}
+    if (!check_errors(av, ac))
+		return (0);
 	push_swap = malloc(sizeof(*push_swap));
 	push_swap->a = null_list();
 	push_swap->b = null_list();
-	if (!check_errors(av, ac))
-		return (0);
     get_data(push_swap, ac, av);
-	push_swap->a->name = 'a';
-	push_swap->b->name = 'b';
-    swap_top(push_swap->a);
-	printf("coucou\n");
-	push(push_swap->a, push_swap->b);
-	push(push_swap->a, push_swap->b);
-	rotate_both(push_swap->a, push_swap->b);
 	t_node	*index = push_swap->a->start;
-	t_node	*index2 = push_swap->b->start;
-	printf("Liste a :\n");
+	printf("Liste a at start:\n");
 	while (index)
     {
         printf("[%d]\n", index->data);
 		index = index->next;
     }
-	printf("Liste b :\n");
+	push_swap->a = low_data(push_swap);	
+	printf("coucou\n");
+	t_node	*index2 = push_swap->a->start;
+	printf("Liste a after sorting :\n");
 	while (index2)
     {
         printf("[%d]\n", index2->data);
