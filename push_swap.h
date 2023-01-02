@@ -6,7 +6,7 @@
 /*   By: darrensdev <darrensdev@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 16:06:17 by eleleux           #+#    #+#             */
-/*   Updated: 2022/12/27 12:29:03 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/01/01 18:41:03 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	free_data(t_data *data);
 int		is_sorted(t_chained *list);
 int		is_reverse_sorted(t_chained *list);
 int		list_has_sup_med(t_data *data, t_chained *list);
-int		list_has_low_med(t_data *data, t_chained *list);
+int		list_has_low_med(int med, t_chained *list);
 int		node_is_sup_med(t_data *data, t_node *node);
 
 //Errors

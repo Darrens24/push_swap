@@ -4,14 +4,14 @@ CC = gcc
 
 FLAGS = -Wall -Wextra -Werror
 
-SRC = main.c \
-	  	utils.c\
-		utils2.c
+SRC = utils.c \
+		utils2.c \
 		errors.c \
 		lists.c \
 		instructions1.c \
 		instructions2.c \
 		sorting.c \
+		main.c \
 
 OBJ = $(SRC:.c=.o)
 
@@ -25,8 +25,9 @@ clean:
 	rm -f $(OBJ)
 	@make clean -C ./Libft
 
-fclean: clean
-	rm -f $(NAME) 
+fclean:	clean
+	rm -f $(NAME)
 	@make fclean -C ./Libft
 
-re: fclean all
+re:	fclean all
+

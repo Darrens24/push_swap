@@ -70,7 +70,7 @@ t_chained	*rotate(t_chained *list)
 {
 	int	buf;
 
-	if (list->nb_elem < 2)
+	if (list->nb_elem < 1)
 	{
 		ft_printf("Not enough elements to rotate\n");
 		return (list);
@@ -87,17 +87,35 @@ t_chained	*rotate_both(t_chained *list1, t_chained *list2)
 	int	buf1;
 	int	buf2;
 
-	if (list1->nb_elem < 2 || list2->nb_elem < 2)
+	if (list1->nb_elem < 1 || list2->nb_elem < 1)
 	{
+
 		ft_printf("Not enough elements to rotate\n");
 		return (list1);
 	}
-	buf1 = list1->start->data;
-	list1 = remove_front_node(list1);
-	list1 = new_back_node(list1, buf1);
-	buf2 = list2->start->data;
-	list2 = remove_front_node(list2);
-	list2 = new_back_node(list2, buf2);
 	ft_printf("rr\n");
+	if (list1->nb_elem == 1)
+	{
+		buf2 = list2->start->data;
+		list2 = remove_front_node(list2);
+		list2 = new_back_node(list2, buf2);
+		return (list2);
+	}
+	if (list2->nb_elem == 1)
+	{
+		buf1 = list1->start->data;
+		list1 = remove_front_node(list1);
+		list1 = new_back_node(list1, buf1);
+		return (list1);
+	}
+	else
+	{
+		buf1 = list1->start->data;
+		list1 = remove_front_node(list1);
+		list1 = new_back_node(list1, buf1);
+		buf2 = list2->start->data;
+		list2 = remove_front_node(list2);
+		list2 = new_back_node(list2, buf2);
+	}
 	return (list2);
 }

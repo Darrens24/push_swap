@@ -2,24 +2,23 @@
 
 int main(int ac, char **av)
 {
-    t_data  *push_swap;
-
+    t_data  push_swap;
+	
     if (!check_errors(av, ac))
 		return (0);
-	push_swap = malloc(sizeof(*push_swap));
-	push_swap->a = null_list();
-	push_swap->b = null_list();
-    get_data(push_swap, ac, av);
-	t_node	*index = push_swap->a->start;
-	printf("Liste a at start:\n");
+	push_swap.a = null_list();
+	push_swap.b = null_list();
+    get_data(&push_swap, ac, av);
+	t_node	*index = push_swap.a->start;
+	printf("Liste A Depart :\n");
 	while (index)
     {
         printf("[%d]\n", index->data);
 		index = index->next;
     }
-	push_swap->a = low_data(push_swap);	
-	printf("coucou\n");
-	t_node	*index2 = push_swap->a->start;
+	push_swap.a = low_data(&push_swap);	
+	printf("\n-------------\n");
+	t_node	*index2 = push_swap.a->start;
 	printf("Liste a after sorting :\n");
 	while (index2)
     {

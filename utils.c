@@ -27,12 +27,14 @@ int	get_data(t_data *data, int ac, char **av)
 		ft_putstr_fd("Error\nDynamic allocation failed", 2);
 		return (-1);
 	}
+	data->a->name = 'a';
 	data->b = malloc(sizeof(*data->b));
 	if (!data->b)
 	{
 		ft_putstr_fd("Error\nDynamic allocation failed", 2);
 		return (-1);
 	}
+	data->b->name = 'b';
 	while (i < data->nb_elem)
 	{
 		data->a = new_back_node(data->a, ft_atoi(av[i + 1]));
@@ -67,6 +69,7 @@ int		list_has_sup_med(t_data *data, t_chained *list)
 		if (temp->data > data->medium)
 			return (1);
 		temp = temp->next;
-	{
+	}
 	return (0);
 }
+
