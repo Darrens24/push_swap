@@ -8,7 +8,7 @@ t_chained	*null_list(void)
 
 int	is_empty(t_chained *list)
 {
-	if (list->nb_elem == 0 || !list)
+	if (!list || list->nb_elem == 0)
 		return (1);
 	return (0);
 }
@@ -19,7 +19,7 @@ int	get_data(t_data *data, int ac, char **av)
 	int	res;
 
 	data->nb_elem = ac - 1;
-	i = 0;
+	i = 1;
 	res = 0;
 	data->a = malloc(sizeof(*data->a));
 	if (!data->a)
@@ -35,10 +35,10 @@ int	get_data(t_data *data, int ac, char **av)
 		return (-1);
 	}
 	data->b->name = 'b';
-	while (i < data->nb_elem)
+	while (i <= data->nb_elem)
 	{
-		data->a = new_back_node(data->a, ft_atoi(av[i + 1]));
-		res += data->a->start->data;
+		data->a = new_back_node(data->a, ft_atoi(av[i]));
+		res += data->a->end->data;
 		i++;
 	}
 	data->medium = (res / data->nb_elem);

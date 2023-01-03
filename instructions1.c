@@ -15,11 +15,13 @@ t_chained	*swap_top(t_chained *list)
 	buf = temp->data;
 	free(list->start->next);
 	list->start->next = NULL;
+	temp->prev = NULL;
 	if (list->nb_elem > 2)
 	{
 		list->start->next = temp->next;
 		temp->next->prev = list->start;
 	}
+	list->nb_elem--;
 	list = new_front_node(list, buf);
 	ft_printf("s%c\n", list->name);
 	return (list);
@@ -38,16 +40,27 @@ t_chained	*swap_both(t_chained *list1, t_chained *list2)
 		return (list1);
 	}
 	temp1 = list1->start->next;
-	buf1 = temp1->data;
+	buf1 = list1->start->next->data;
 	free(list1->start->next);
-	list1->start->next = temp1->next;
-	temp1->next->prev = list1->start;
+	list1->nb_elem--;
+	list1->start->next = NULL;
+	temp1->prev = NULL;
+	if (list1->nb_elem > 2)
+	{
+		list1->start->next = temp1->next;
+		temp1->next->prev = list1->start;
+	}
 	list1 = new_front_node(list1, buf1);
 	temp2 = list2->start->next;
-	buf2 = temp2->data;
+	buf2 = list2->start->next->data;
 	free(list2->start->next);
-	list2->start->next = temp2->next;
-	temp2->next->prev = list2->start;
+	list2->nb_elem--;
+	list2->start->next = NULL;
+	if (list2->nb_elem > 2)
+	{
+		list2->start->next = temp2->next;
+		temp2->next->prev = list2->start;
+	}
 	list2 = new_front_node(list2, buf2);
 	ft_printf("ss\n");
 	return (list2);
@@ -60,8 +73,8 @@ t_chained	*push(t_chained *from, t_chained *to)
 	if (is_empty(from))
 		return (to);
 	buf = from->start->data;
-	from = remove_front_node(from);
-	to = new_front_node(to, buf);
+	remove_front_node(from);
+	new_front_node(to, buf);
 	ft_printf("p%c\n", to->name);
 	return (to);
 }

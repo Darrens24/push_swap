@@ -14,7 +14,7 @@ int	list_has_low_med(int med, t_chained *list)
 	temp = list->start;
 	while (temp)
 	{
-		if (temp->data < med)
+		if (temp->data <= med)
 			return (1);
 		temp = temp->next;
 	}

@@ -2,30 +2,39 @@
 
 int main(int ac, char **av)
 {
-    t_data  push_swap;
-	
+    t_data  *push_swap;
+
+	push_swap = malloc(sizeof(*push_swap));
     if (!check_errors(av, ac))
 		return (0);
-	push_swap.a = null_list();
-	push_swap.b = null_list();
-    get_data(&push_swap, ac, av);
-	t_node	*index = push_swap.a->start;
+    get_data(push_swap, ac, av);
+	t_node *index = push_swap->a->start;
+	printf("index = %d\n", index->data);
 	printf("Liste A Depart :\n");
 	while (index)
     {
-        printf("[%d]\n", index->data);
+        printf("%d\n", index->data);
 		index = index->next;
     }
-	push_swap.a = low_data(&push_swap);	
+	push_swap->a = low_data(push_swap);	
 	printf("\n-------------\n");
-	t_node	*index2 = push_swap.a->start;
+	t_node	*index2 = push_swap->a->start;
 	printf("Liste a after sorting :\n");
 	while (index2)
     {
         printf("[%d]\n", index2->data);
 		index2 = index2->next;
     }
+	/*t_node	*index3 = push_swap->b->start;
+	printf("Liste b after sorting :\n");
+	while (index3)
+    {
+        printf("[%d]\n", index3->data);
+		index2 = index3->next;
+    }
+	*/
     return (0);
+}
 /*	
 	(void)ac, (void)av;
 	t_chained	*list = null_list();
@@ -51,4 +60,4 @@ int main(int ac, char **av)
 		temp2 = temp2->next;
 	}
 	*/
-}
+
