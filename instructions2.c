@@ -4,11 +4,14 @@ t_chained	*reverse(t_chained *list)
 {
 	int	buf;
 
-	if (is_empty(list))
-		return (null_list());
-	buf = list->end->data;
-	list = remove_back_node(list);
+	if (list->nb_elem < 1)
+	{
+		ft_printf("Not enough elements to rotate\n");
+		return (list);
+	}
+	buf = list->start->data;
 	list = new_front_node(list, buf);
+	list = remove_back_node(list);
 	ft_printf("rr%c\n", list->name);
 	return (list);
 }

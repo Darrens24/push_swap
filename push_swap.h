@@ -6,7 +6,7 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 16:06:17 by eleleux           #+#    #+#             */
-/*   Updated: 2023/01/02 19:07:56 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/01/03 19:04:31 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct s_data
 //List Manipulation
 t_chained	*null_list(void); //ok
 int			is_empty(t_chained *list); //ok
+t_node		*go_to_end(t_chained *list);
 t_chained	*new_front_node(t_chained *list, int data); //ok
 t_chained	*new_back_node(t_chained *list, int data);//ok
 t_chained	*remove_front_node(t_chained *list);//ok
@@ -74,7 +75,10 @@ t_chained	*rotate_both(t_chained *list1, t_chained *list2);//ok
 t_chained	*reverse(t_chained *list);
 t_chained	*reverse_both(t_chained *list1, t_chained *list2);//ok
 
-//Sorting Algos
+//Sorting Algoritm
+void		start_fill_b(t_data *data);
+void		middle_sort(t_data *data);
+void		end_fill_a(t_data *data);
 t_chained	*low_data(t_data *data);
 t_chained	*medium_data(t_data *data);
 t_chained	*high_data(t_data *data);

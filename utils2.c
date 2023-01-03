@@ -1,5 +1,15 @@
 #include "push_swap.h"
 
+t_node	*go_to_end(t_chained *list)
+{
+	t_node	*temp;
+
+	temp = list->start;
+	while (temp->next != NULL)
+		temp = temp->next;
+	return (temp);
+}
+
 int	node_is_sup_med(t_data *data, t_node *node)
 {
 	if (node->data > data->medium)
@@ -14,7 +24,7 @@ int	list_has_low_med(int med, t_chained *list)
 	temp = list->start;
 	while (temp)
 	{
-		if (temp->data <= med)
+		if (temp->data < med)
 			return (1);
 		temp = temp->next;
 	}
