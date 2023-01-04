@@ -74,8 +74,8 @@ t_chained	*push(t_chained *from, t_chained *to)
 	if (is_empty(from))
 		return (to);
 	buf = from->start->data;
-	new_front_node(to, buf);
 	remove_front_node(from);
+	new_front_node(to, buf);
 	ft_printf("p%c\n", to->name);
 	return (to);
 }
@@ -109,10 +109,10 @@ t_chained	*rotate_both(t_chained *list1, t_chained *list2)
 	}
 	ft_printf("rr\n");
 	buf1 = list1->start->data;
-	list1 = new_back_node(list1, buf1);
 	list1 = remove_front_node(list1);
+	list1 = new_back_node(list1, buf1);
 	buf2 = list2->start->data;
-	list2 = new_back_node(list2, buf2);
 	list2 = remove_front_node(list2);
+	list2 = new_back_node(list2, buf2);
 	return (list2);
 }

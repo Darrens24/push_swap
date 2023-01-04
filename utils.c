@@ -38,10 +38,8 @@ int	get_data(t_data *data, int ac, char **av)
 	while (i <= data->nb_elem)
 	{
 		data->a = new_back_node(data->a, ft_atoi(av[i]));
-		res += data->a->end->data;
 		i++;
 	}
-	data->medium = (res / data->nb_elem);
 	return (0);
 }
 

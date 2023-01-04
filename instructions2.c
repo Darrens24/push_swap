@@ -9,9 +9,9 @@ t_chained	*reverse(t_chained *list)
 		ft_printf("Not enough elements to rotate\n");
 		return (list);
 	}
-	buf = list->start->data;
-	list = new_front_node(list, buf);
+	buf = list->end->data;
 	list = remove_back_node(list);
+	list = new_front_node(list, buf);
 	ft_printf("rr%c\n", list->name);
 	return (list);
 }

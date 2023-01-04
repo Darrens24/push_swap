@@ -6,7 +6,7 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 16:06:17 by eleleux           #+#    #+#             */
-/*   Updated: 2023/01/03 19:04:31 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/01/04 14:31:19 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,9 @@ t_chained	*remove_back_node(t_chained *list);//ok
 
 //Data
 long	ft_atol(char *str);
+int		get_medium(t_chained *list);
+int		is_lowest(t_chained *list);
+int		is_biggest(t_chained *list);
 int		get_data(t_data *data, int ac, char **av);//ok
 void	free_data(t_data *data);
 int		is_sorted(t_chained *list);
@@ -79,6 +82,7 @@ t_chained	*reverse_both(t_chained *list1, t_chained *list2);//ok
 void		start_fill_b(t_data *data);
 void		middle_sort(t_data *data);
 void		end_fill_a(t_data *data);
+t_chained	*very_low_data(t_data *data);
 t_chained	*low_data(t_data *data);
 t_chained	*medium_data(t_data *data);
 t_chained	*high_data(t_data *data);

@@ -16,7 +16,10 @@ int main(int ac, char **av)
         printf("%d\n", index->data);
 		index = index->next;
     }*/
-	push_swap->a = low_data(push_swap);	
+	if (ac > 2 && ac < 5)
+		push_swap->a = very_low_data(push_swap);	
+	else if (ac >= 5)
+		push_swap->a = low_data(push_swap);
 	/*printf("\n-------------\n");
 	t_node	*index2 = push_swap->a->start;
 	printf("Liste a after sorting :\n");
