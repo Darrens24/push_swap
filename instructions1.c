@@ -72,7 +72,7 @@ t_chained	*push(t_chained *from, t_chained *to)
 	int	buf;
 
 	if (is_empty(from))
-		return (to);
+		return (null_list());
 	buf = from->start->data;
 	remove_front_node(from);
 	new_front_node(to, buf);

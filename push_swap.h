@@ -6,7 +6,7 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 16:06:17 by eleleux           #+#    #+#             */
-/*   Updated: 2023/01/04 14:31:19 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/01/05 17:00:33 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ typedef struct s_chained
 {
 	int				nb_elem;
 	char			name;
+	int				medium;
+	int				low;
+	int				big;
+	int				count_second_big;
+	int				step;
+	int				next_step;
 	struct s_node	*start;
 	struct s_node	*end;
 }				t_chained;
@@ -34,11 +40,8 @@ typedef struct s_data
 {
 	int			nb_elem;
 	int			medium;
-	int			bigger;
-	int			lower;
 	t_chained	*a;
 	t_chained	*b;
-
 }				t_data;
 
 //List Manipulation
@@ -55,6 +58,7 @@ long	ft_atol(char *str);
 int		get_medium(t_chained *list);
 int		is_lowest(t_chained *list);
 int		is_biggest(t_chained *list);
+int		is_second_biggest(t_chained *list);
 int		get_data(t_data *data, int ac, char **av);//ok
 void	free_data(t_data *data);
 int		is_sorted(t_chained *list);
@@ -62,6 +66,9 @@ int		is_reverse_sorted(t_chained *list);
 int		list_has_sup_med(t_data *data, t_chained *list);
 int		list_has_low_med(int med, t_chained *list);
 int		node_is_sup_med(t_data *data, t_node *node);
+int		has_data_in_step(t_chained *list);
+int		is_in_step(int data, t_chained *list);
+int		absolute(int data);
 
 //Errors
 int	check_double(char **av, int ac);
@@ -86,5 +93,9 @@ t_chained	*very_low_data(t_data *data);
 t_chained	*low_data(t_data *data);
 t_chained	*medium_data(t_data *data);
 t_chained	*high_data(t_data *data);
+int			look_from_top(t_chained *list);
+int			look_from_bot(t_chained *list);
+int			biggest_from_top(t_chained *list);
+int			biggest_from_bot(t_chained *list);
 
 #endif

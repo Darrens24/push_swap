@@ -6,7 +6,7 @@
 /*   By: eleleux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 15:36:45 by eleleux           #+#    #+#             */
-/*   Updated: 2023/01/04 15:58:12 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/01/04 19:14:59 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int	is_biggest(t_chained *list)
 	}
 	return (big);
 }
+
 /*
 void		start_fill_b(t_data *data)
 {

@@ -6,7 +6,7 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:20:54 by eleleux           #+#    #+#             */
-/*   Updated: 2023/01/03 19:06:00 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/01/05 14:30:20 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,9 @@ t_chained	*remove_front_node(t_chained *list)
 	}
 	if (list->nb_elem == 1)
 	{
-		free(list->start);
 		list->nb_elem--;
-		free(list);
-		list = NULL;
+		free(list->start);
+		list->start = NULL;
 		return (list);
 	}
 	temp = list->start;
@@ -111,10 +110,9 @@ t_chained	*remove_back_node(t_chained *list)
 	}
 	if (list->nb_elem == 1)
 	{
-		free(list->end);
 		list->nb_elem--;
-		free(list);
-		list = NULL;
+		free(list->end);
+		list->end = NULL;
 		return (list);
 	}
 	temp = list->end;

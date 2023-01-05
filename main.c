@@ -17,9 +17,13 @@ int main(int ac, char **av)
 		index = index->next;
     }*/
 	if (ac > 2 && ac < 5)
-		push_swap->a = very_low_data(push_swap);	
-	else if (ac >= 5)
+		push_swap->a = very_low_data(push_swap);
+	else if (ac >= 5 && ac < 50)
 		push_swap->a = low_data(push_swap);
+	else if (ac >= 50)
+		push_swap->a = medium_data(push_swap);
+
+
 	/*printf("\n-------------\n");
 	t_node	*index2 = push_swap->a->start;
 	printf("Liste a after sorting :\n");
@@ -38,6 +42,7 @@ int main(int ac, char **av)
 	*/
     return (0);
 }
+
 /*	
 	(void)ac, (void)av;
 	t_chained	*list = null_list();
