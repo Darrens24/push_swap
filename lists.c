@@ -6,11 +6,21 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:20:54 by eleleux           #+#    #+#             */
-/*   Updated: 2023/01/05 14:30:20 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/01/06 17:00:04 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_node	*go_to_end(t_chained *list)
+{
+	t_node	*temp;
+
+	temp = list->start;
+	while (temp->next != NULL)
+		temp = temp->next;
+	return (temp);
+}
 
 t_chained	*new_front_node(t_chained *list, int data)
 {
@@ -28,11 +38,10 @@ t_chained	*new_front_node(t_chained *list, int data)
 		list->start = elem;
 		list->end = elem;
 		elem->next = NULL;
-		elem->prev = NULL;
 	}
 	else
 	{
-		list->start->prev = elem;	
+		list->start->prev = elem;
 		elem->prev = NULL;
 		elem->next = list->start;
 		list->start = elem;
@@ -97,7 +106,6 @@ t_chained	*remove_front_node(t_chained *list)
 	list->nb_elem--;
 	return (list);
 }
-
 
 t_chained	*remove_back_node(t_chained *list)
 {

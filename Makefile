@@ -12,6 +12,7 @@ SRC = utils.c \
 		instructions2.c \
 		sorting.c \
 		sorting_utils.c \
+		sorting_utils2.c \
 		main.c \
 
 OBJ = $(SRC:.c=.o)

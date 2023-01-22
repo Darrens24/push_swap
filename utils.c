@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/06 15:46:00 by eleleux           #+#    #+#             */
+/*   Updated: 2023/01/06 16:55:09 by eleleux          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
@@ -23,17 +34,11 @@ int	get_data(t_data *data, int ac, char **av)
 	res = 0;
 	data->a = malloc(sizeof(*data->a));
 	if (!data->a)
-	{
-		ft_putstr_fd("Error\nDynamic allocation failed", 2);
-		return (-1);
-	}
+		return (ft_putstr_fd("Error\nDynamic allocation failed", 2), -1);
 	data->a->name = 'a';
 	data->b = malloc(sizeof(*data->b));
 	if (!data->b)
-	{
-		ft_putstr_fd("Error\nDynamic allocation failed", 2);
-		return (-1);
-	}
+		return (ft_putstr_fd("Error\nDynamic allocation failed", 2), -1);
 	data->b->name = 'b';
 	while (i <= data->nb_elem)
 	{
@@ -43,7 +48,7 @@ int	get_data(t_data *data, int ac, char **av)
 	return (0);
 }
 
-int		is_sorted(t_chained *list)
+int	is_sorted(t_chained *list)
 {
 	t_node	*tmp;
 
@@ -57,7 +62,7 @@ int		is_sorted(t_chained *list)
 	return (1);
 }
 
-int		list_has_sup_med(t_data *data, t_chained *list)
+int	list_has_sup_med(t_data *data, t_chained *list)
 {
 	t_node	*temp;
 
@@ -70,4 +75,3 @@ int		list_has_sup_med(t_data *data, t_chained *list)
 	}
 	return (0);
 }
-
