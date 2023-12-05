@@ -6,7 +6,7 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 14:27:55 by eleleux           #+#    #+#             */
-/*   Updated: 2023/01/06 14:34:38 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/06/06 10:15:58 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ t_chained	*swap_top(t_chained *list)
 	int		buf;
 
 	if (list->nb_elem < 2)
-	{
-		ft_printf("Not enough elements for swapping\n");
 		return (list);
-	}
 	temp = list->start->next;
 	buf = temp->data;
 	free(list->start->next);
@@ -51,6 +48,8 @@ void	swap_without_print(t_chained *list1)
 	t_node	*temp1;
 	int		buf1;
 
+	if (list1->nb_elem < 2)
+		return ;
 	temp1 = list1->start->next;
 	buf1 = list1->start->next->data;
 	free(list1->start->next);

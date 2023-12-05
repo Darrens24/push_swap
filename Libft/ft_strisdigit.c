@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strisdigit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eleleux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 14:26:54 by eleleux           #+#    #+#             */
-/*   Updated: 2022/11/07 14:44:18 by eleleux          ###   ########.fr       */
+/*   Created: 2023/02/22 17:48:07 by eleleux           #+#    #+#             */
+/*   Updated: 2023/05/06 11:58:10 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+int	ft_strisdigit(char *str)
 {
-	if (((c >= 'a') && (c <= 'z'))
-		|| ((c >= 'A') && (c <= 'Z'))
-		|| ((c >= '0') && (c <= '9')))
-		return (1);
-	return (0);
+	int	i;
+
+	i = 0;
+	if (str && str[i] == '-')
+		i++;
+	while (str && str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
 }

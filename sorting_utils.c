@@ -6,7 +6,7 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 14:40:00 by eleleux           #+#    #+#             */
-/*   Updated: 2023/01/06 16:56:00 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/05/18 12:41:18 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	look_from_top(t_chained *list)
 
 	temp = list->start;
 	i = 0;
-	while (temp->data > list->next_step)
+	while (temp && temp->data > list->next_step)
 	{
 		i++;
 		temp = temp->next;
@@ -84,7 +84,7 @@ int	look_from_bot(t_chained *list)
 
 	temp = list->end;
 	i = 0;
-	while (temp->data > list->next_step)
+	while (temp && temp->data > list->next_step)
 	{
 		i++;
 		temp = temp->prev;

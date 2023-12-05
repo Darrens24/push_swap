@@ -6,7 +6,7 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:46:00 by eleleux           #+#    #+#             */
-/*   Updated: 2023/01/06 16:55:09 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/06/06 10:21:35 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,14 @@ int	get_data(t_data *data, int ac, char **av)
 	res = 0;
 	data->a = malloc(sizeof(*data->a));
 	if (!data->a)
-		return (ft_putstr_fd("Error\nDynamic allocation failed", 2), -1);
+		return (ft_putstr_fd("Error\n", 2), -1);
 	data->a->name = 'a';
+	data->a->nb_elem = 0;
 	data->b = malloc(sizeof(*data->b));
 	if (!data->b)
-		return (ft_putstr_fd("Error\nDynamic allocation failed", 2), -1);
+		return (ft_putstr_fd("Error\n", 2), -1);
 	data->b->name = 'b';
+	data->b->nb_elem = 0;
 	while (i <= data->nb_elem)
 	{
 		data->a = new_back_node(data->a, ft_atoi(av[i]));
@@ -53,7 +55,7 @@ int	is_sorted(t_chained *list)
 	t_node	*tmp;
 
 	tmp = list->start;
-	while (tmp->next != NULL)
+	while (tmp && tmp->next != NULL)
 	{
 		if (tmp->data > tmp->next->data)
 			return (0);

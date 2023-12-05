@@ -6,7 +6,7 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 16:56:14 by eleleux           #+#    #+#             */
-/*   Updated: 2023/01/06 17:00:13 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/05/18 12:29:54 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,22 @@ int	absolute(int data)
 		return (data * -1);
 	return (data);
 }
+
+/* int	second_biggest_from_top(t_chained *list) */
+/* { */
+/* 	int	i; */
+
+/* 	i = 0; */
+/* 	return (i); */
+/* } */
+
+/* int	second_biggest_from_bot(t_chained *list) */
+/* { */
+/* 	int	i; */
+
+/* 	i = 0; */
+/* 	return (i); */
+/* } */
 
 int	biggest_from_top(t_chained *list)
 {

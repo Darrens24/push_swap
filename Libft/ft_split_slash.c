@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split_slash.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eleleux <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: darrensdev <darrensdev@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:11:33 by eleleux           #+#    #+#             */
-/*   Updated: 2022/11/14 12:37:44 by eleleux          ###   ########.fr       */
+/*   Updated: 2022/12/13 17:58:57 by darrensdev       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static char	*duplicate(char *src, int start, int end)
 	char	*dest;
 
 	i = 0;
-	dest = malloc(sizeof(char) * (end - start) + 1);
+	dest = malloc(sizeof(char) * (end - start) + 2);
 	if (!dest)
 		return (NULL);
 	while (start < end)
@@ -48,7 +48,8 @@ static char	*duplicate(char *src, int start, int end)
 		start++;
 		i++;
 	}
-	dest[i] = '\0';
+	dest[i] = '/';
+	dest[i + 1] = '\0';
 	return (dest);
 }
 
@@ -59,7 +60,7 @@ static void	freetab(char **recipe, int i)
 	free(recipe);
 }
 
-char	**splitter(char const *s, char c, char **recipe)
+static char	**splitter(char const *s, char c, char **recipe)
 {
 	size_t	i;
 	size_t	j;
@@ -88,7 +89,7 @@ char	**splitter(char const *s, char c, char **recipe)
 	return (recipe);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split_slash(char const *s, char c)
 {
 	char	**recipe;
 

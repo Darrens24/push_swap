@@ -6,7 +6,7 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:20:54 by eleleux           #+#    #+#             */
-/*   Updated: 2023/01/06 17:00:04 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/05/19 13:52:13 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,7 @@ t_chained	*new_front_node(t_chained *list, int data)
 
 	elem = malloc(sizeof(*elem));
 	if (!elem)
-	{
-		ft_putstr_fd("Error\nDynamic allocation failed", 2);
 		return (null_list());
-	}
 	elem->data = data;
 	if (list->nb_elem == 0)
 	{
@@ -57,10 +54,7 @@ t_chained	*new_back_node(t_chained *list, int data)
 
 	elem = malloc(sizeof(*elem));
 	if (!elem)
-	{
-		ft_putstr_fd("Error\nDynamic allocation failed", 2);
 		return (null_list());
-	}
 	elem->data = data;
 	if (list->nb_elem == 0)
 	{
@@ -85,10 +79,7 @@ t_chained	*remove_front_node(t_chained *list)
 	t_node	*temp;
 
 	if (is_empty(list))
-	{
-		ft_putstr_fd("Error\nNothing to free\n", 2);
 		return (null_list());
-	}
 	if (list->nb_elem == 1)
 	{
 		list->nb_elem--;
@@ -112,10 +103,7 @@ t_chained	*remove_back_node(t_chained *list)
 	t_node	*temp;
 
 	if (is_empty(list))
-	{
-		ft_putstr_fd("Error\nNothing to free\n", 2);
 		return (null_list());
-	}
 	if (list->nb_elem == 1)
 	{
 		list->nb_elem--;

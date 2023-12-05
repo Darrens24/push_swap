@@ -6,11 +6,23 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 14:25:33 by eleleux           #+#    #+#             */
-/*   Updated: 2023/01/06 17:04:29 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/06/06 10:47:43 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	launch_sorting_algo(int ac, t_data *push_swap)
+{
+	if (ac > 2 && ac < 5)
+		push_swap->a = very_low_data(push_swap);
+	else if (ac >= 5 && ac < 50)
+		push_swap->a = low_data(push_swap);
+	else if (ac >= 50 && ac < 400)
+		push_swap->a = medium_data(push_swap);
+	else if (ac >= 400)
+		push_swap->a = high_data(push_swap);
+}
 
 int	main(int ac, char **av)
 {
@@ -22,13 +34,6 @@ int	main(int ac, char **av)
 	get_data(push_swap, ac, av);
 	if (is_sorted(push_swap->a))
 		return (0);
-	if (ac > 2 && ac < 5)
-		push_swap->a = very_low_data(push_swap);
-	else if (ac >= 5 && ac < 50)
-		push_swap->a = low_data(push_swap);
-	else if (ac >= 50 && ac < 400)
-		push_swap->a = medium_data(push_swap);
-	else if (ac >= 400)
-		push_swap->a = high_data(push_swap);
+	launch_sorting_algo(ac, push_swap);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: eleleux <eleleux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 18:21:04 by eleleux           #+#    #+#             */
-/*   Updated: 2022/12/23 11:07:16 by eleleux          ###   ########.fr       */
+/*   Updated: 2023/02/18 14:57:04 by eleleux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
+#  define BUFFER_SIZE 20
 # endif
 
-# include "libft.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
 # include <fcntl.h>
+# include <stdint.h>
 
 // UTILS
 
 int		ft_intstrlen(char *str);
 char	*ft_join_nextline(char *dest, char *src);
 int		line_in_stock(char *str);
-void	ft_bzero(void *s, size_t n);
-void	*ft_calloc(size_t count, size_t size);
+void	ft_bzzero(void *s, size_t n);
+void	*ft_callloc(size_t count, size_t size);
 
 // GNL
 
